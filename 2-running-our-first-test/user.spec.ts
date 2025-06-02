@@ -6,4 +6,10 @@ describe("User Tests", () => {
 
     expect(newUser.getFullName()).toEqual("Dima Smaha");
   });
+
+  it("getFullName", () => {
+    const newUser = new User("Dima", "Sm");
+
+    expect(newUser.getFullName()).toBe("Dima Sm");
+  });
 });
