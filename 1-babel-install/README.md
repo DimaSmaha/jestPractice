@@ -1,5 +1,7 @@
 # How to Run the code
 
+https://github.com/vueschool/test-with-jest
+
 If you want to run all the tests of this repository,
 copy the `.babelrc` and `package.json` file from the `1-babel-install` folder into the root folder.
 
