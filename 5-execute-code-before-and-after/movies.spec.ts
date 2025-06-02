@@ -8,7 +8,7 @@ describe("Movies", () => {
   });
 
   test("Test Add Movie", () => {
-    movies.addMovie("Fast & Furious");
+    movies.addMovie("Fast & Furious 5");
 
     expect(movies.getCollection()).toMatchSnapshot();
     // expect(movies.getCollection()).toEqual([

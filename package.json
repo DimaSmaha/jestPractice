@@ -1,7 +1,8 @@
 {
   "scripts": {
     "test": "jest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "watchAll": "jest --watchAll"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
