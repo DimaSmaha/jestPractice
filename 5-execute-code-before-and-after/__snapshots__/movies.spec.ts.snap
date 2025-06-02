@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movies Test Add Movie 1`] = `
+[
+  {
+    "rating": null,
+    "title": "Jumanji",
+  },
+  {
+    "rating": null,
+    "title": "Fast & Furious",
+  },
+]
+`;
+
+exports[`Movies Test Add Rating 1`] = `
+[
+  {
+    "rating": 5,
+    "title": "Jumanji",
+  },
+  {
+    "rating": null,
+    "title": "Fast & Furious",
+  },
+]
+`;
