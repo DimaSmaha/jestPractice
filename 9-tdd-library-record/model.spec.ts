@@ -51,4 +51,16 @@ describe("addModel method", () => {
     expect(spy).toHaveBeenCalledTimes(1);
     spy.mockRestore();
   });
+
+  test("check addModel method with Spy 2 ", () => {
+    const games2 = ["NFS", "Zelda"];
+
+    const spy = jest.spyOn(Model.prototype, "addModel");
+    const model = new Model(games2);
+    model.addModel(games);
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledTimes(2);
+    spy.mockRestore();
+    expect(model.collection).toEqual(["NFS", "Zelda", "Witcher 3", "GTA V"]);
+  });
 });

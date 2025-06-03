@@ -9,9 +9,10 @@ export default class Model {
     }
   }
 
-  addModel = (games: string[]) => {
+  //** Arrow function wont exist in prototype */
+  addModel(games: string[]) {
     this.collection.push(...games);
-  };
+  }
 
   showAllModels = () => {};
   findModel = () => {};
