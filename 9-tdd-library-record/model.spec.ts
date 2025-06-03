@@ -49,6 +49,6 @@ describe("addModel method", () => {
     model.addModel(games);
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledTimes(1);
-    spy.mockClear();
+    spy.mockRestore();
   });
 });
