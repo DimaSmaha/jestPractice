@@ -12,4 +12,13 @@ describe("User Tests", () => {
 
     expect(newUser.getFullName()).toBe("Dima Sm");
   });
+
+  it("Check throw error", () => {
+    const newUser = new User("Dima", "123");
+
+    expect(() => newUser.getFullName()).toThrow(TypeError);
+
+    //  expect(newUser.getFullName()).toThrow(TypeError);
+    //  toThrow expects a function, not a value. When you write getFullName(), the error is thrown before Jest can catch it.
+  });
 });

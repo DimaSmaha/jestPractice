@@ -7,5 +7,16 @@ export default class User {
     this.lastName = lastName;
   }
 
-  getFullName = () => `${this.firstName} ${this.lastName}`;
+  checkNameCorrectness = () => {
+    if (/[1-9]/.test(this.firstName) || /[1-9]/.test(this.lastName)) {
+      throw new TypeError("Name can not contain numbers");
+    }
+    return true;
+  };
+
+  getFullName = () => {
+    if (this.checkNameCorrectness()) {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  };
 }
