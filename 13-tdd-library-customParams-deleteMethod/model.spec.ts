@@ -24,6 +24,7 @@ describe("global model suite", () => {
         findModelById: expect.any(Function),
         findModelByName: expect.any(Function),
         updateModelById: expect.any(Function),
+        deleteModelById: expect.any(Function),
       });
     });
 
@@ -36,6 +37,7 @@ describe("global model suite", () => {
           findModelById: expect.any(Function),
           findModelByName: expect.any(Function),
           updateModelById: expect.any(Function),
+          deleteModelById: expect.any(Function),
         })
       );
     });
@@ -175,6 +177,27 @@ describe("global model suite", () => {
 
     test("check updateModelById null", () => {
       expect(model.updateModelById(2, "GTA VI")).toEqual("Game is not Found");
+    });
+  });
+
+  describe("deleteModelById method", () => {
+    let model: Model;
+    beforeEach(() => {
+      model = createModel(games);
+    });
+
+    test("check deleteModelById", () => {
+      model.addModel(["Zelda", "CS:GO"]);
+
+      expect(model.deleteModelById(1)).toEqual([
+        { id: 0, gameName: "Witcher 3" },
+        { id: 1, gameName: "Zelda" },
+        { id: 2, gameName: "CS:GO" },
+      ]);
+    });
+
+    test("check deleteModelById null", () => {
+      expect(model.deleteModelById(3)).toEqual("Game is not Found");
     });
   });
 });

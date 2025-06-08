@@ -65,4 +65,18 @@ export default class Model {
 
     return `Game is not Found`;
   };
+
+  deleteModelById = (gameId: number) => {
+    if (this.collection[gameId] === undefined) {
+      return `Game is not Found`;
+    }
+
+    this.collection.splice(gameId, 1);
+
+    this.collection.forEach((el, index) => {
+      el.id = index;
+    });
+
+    return this.collection;
+  };
 }
