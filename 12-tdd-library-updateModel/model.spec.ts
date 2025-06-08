@@ -155,4 +155,22 @@ describe("global", () => {
       );
     });
   });
+
+  describe("updateModelById method", () => {
+    let model: Model;
+    beforeEach(() => {
+      model = new Model(games);
+    });
+
+    test("check updateModelById", () => {
+      expect(model.updateModelById(1, "GTA VI")).toEqual([
+        { id: 0, gameName: "Witcher 3" },
+        { id: 1, gameName: "GTA VI" },
+      ]);
+    });
+
+    test("check updateModelById null", () => {
+      expect(model.updateModelById(2, "GTA VI")).toEqual("Game is not Found");
+    });
+  });
 });

@@ -55,6 +55,14 @@ export default class Model {
     return `Game Found under index ${indexList}`;
   };
 
-  /** Need to redo all model to ids approach */
-  updateModelById = () => {};
+  updateModelById = (gameId: number, newGamesName: string) => {
+    for (let i = 0; i < this.collection.length; i++) {
+      if (this.collection[i].id === gameId) {
+        this.collection[i].gameName = newGamesName;
+        return this.collection;
+      }
+    }
+
+    return `Game is not Found`;
+  };
 }
