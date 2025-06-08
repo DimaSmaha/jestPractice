@@ -11,7 +11,9 @@ export default class Model {
 
   //** Arrow function wont exist in prototype */
   addModel(games: string[]) {
-    this.collection.push(...games);
+    games.forEach((el) => {
+      this.collection.push({ id: this.collection.length, gameName: el });
+    });
   }
 
   showAllModels = (): string[] | string => {
@@ -23,13 +25,25 @@ export default class Model {
   };
 
   /** Optionally we can add an ids */
-  findModel = (gameName: string) => {
+  findModelById = (gameId: number) => {
+    const getGamesList = this.collection;
+
+    for (let i = 0; i < getGamesList.length; i++) {
+      if (getGamesList[i].id === gameId) {
+        return `Game Found under index ${getGamesList[i].id} --> ${getGamesList[i].gameName}`;
+      }
+    }
+
+    return `Game is not Found`;
+  };
+
+  findModelByName = (gameName: string) => {
     const getGamesList = this.collection;
 
     let indexList = "";
 
     getGamesList.forEach((el, index) => {
-      if (el.includes(gameName)) {
+      if (el.gameName.includes(gameName)) {
         indexList += `${index}, `;
       }
     });
@@ -42,5 +56,5 @@ export default class Model {
   };
 
   /** Need to redo all model to ids approach */
-  updateModel = () => {};
+  updateModelById = () => {};
 }
